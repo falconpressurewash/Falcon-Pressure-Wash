@@ -27,6 +27,20 @@
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
 
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "cXq0yP14aIb2KYDFH",
+  });
+})();
+</script>
+<!-- <script defer src="/js/submit.js"></script> -->
+
+
+
 
     <style>
 
@@ -168,30 +182,60 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-8">
-                <form class="contact-form" id="contactForm">
-                  <div class="heading_container ">
-                    <h2 class="text-center mb-4">Contact Us</h2>
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Address</label>
-                        <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-submit">Submit</button>
-                    </div>
-                </form>
+              <form class="contact-form" id="contactForm" action="submit" novalidate>
+                <div class="heading_container">
+                  <h2 class="text-center mb-4">Contact Us</h2>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required 
+                         minlength="3" maxlength="50" pattern="[A-Za-z\s]+" 
+                         title="Name should only contain letters and spaces. Minimum 3 characters.">
+                  <div class="invalid-feedback">Please enter a valid name (letters only, min 3 characters).</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required
+                         title="Please enter a valid email address.">
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" required
+                         pattern="^\+?[0-9]{10,15}$" title="Phone number should be between 10 to 15 digits, with an optional '+' at the start.">
+                  <div class="invalid-feedback">Please enter a valid phone number (10 to 15 digits).</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="3" required
+                            minlength="10" maxlength="300" title="Message must be between 10 and 300 characters."></textarea>
+                  <div class="invalid-feedback">Please enter a message between 10 and 300 characters.</div>
+                </div>
+              
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
+              </form>
+              
+              <script>
+                // JavaScript for custom validation feedback
+                (function() {
+                  'use strict';
+                  const form = document.getElementById('contactForm');
+                  form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                })();
+              </script>
+              
             </div>
         </div>
     </div>
