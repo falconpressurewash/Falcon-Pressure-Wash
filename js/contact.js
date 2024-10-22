@@ -1,4 +1,5 @@
  console.log("added")
+
  document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -12,6 +13,6 @@
       alert('Thanks for the submission. We will reply you shortly');
       console.log(event)
     }, function(error) {
-      alert('Something went wrong, Please try again' + error.text);
+      alert('Something went wrong, Please try again ' + error.text);
     });
   });
