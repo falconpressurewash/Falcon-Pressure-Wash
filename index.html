@@ -8,9 +8,9 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="Falcon Pressure Washing" />
+  <meta name="description" content="Welcome to Falcon Pressure Washing, where we elevate your property's curb
+  appeal with precision and care." />
   <link rel="shortcut icon" href="images/footer-logo.png" type="image/x-icon">
   <title>Falcon Pressure Washing - Every Building Deserves a Falcon Fresh! </title>
 
@@ -32,7 +32,7 @@
 
 <body>
 
-  <header class="header-container">
+ <header class="header-container">
     <div class="container">
         <!-- Main header row -->
         <div class="row align-items-center main-header gx-0">
@@ -148,7 +148,7 @@
     <!-- end header section -->
 
     <!-- slider section -->
-    <section class=" slider_section ">
+    <section class=" slider_section fade">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -215,7 +215,7 @@
 
   <!-- about section -->
   <section class="about_section layout_padding">
-    <div class="container">
+    <div class="container fade">
       <div class="row">
         <div class="col-md-6 px-0">
           <div class="img_container">
@@ -254,7 +254,7 @@
 
   <!-- service section -->
   <section class="service_section layout_padding">
-    <div class="container">
+    <div class="container fade">
       <div class="heading_container heading_center">
         <h2 style="color: white;">
           Why Choose Us
@@ -326,7 +326,7 @@
 
   <!-- client section -->
   <section class="client_section layout_padding">
-    <div class="container ">
+    <div class="container fade">
       <div class="heading_container heading_center">
         <h2>
           What Our Customers Are Saying
@@ -403,14 +403,14 @@
 
   <!-- contact section -->
   <section class="contact-section">
-    <div class="container">
+    <div class="container fade">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="form-container">
             <div class="heading_container heading_center">
               <h2>Get In Touch</h2>
             </div>
-            <form style="margin-top: 10px;" action="#" method="POST">
+            <!-- <form style="margin-top: 10px;" action="#" method="POST">
               <div class="mb-3">
                 <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
               </div>
@@ -426,7 +426,44 @@
               <div class="text-center">
                 <button type="submit" class="btn btn-submit">Submit</button>
               </div>
-            </form>
+            </form> -->
+          
+              <form class="contact-form" id="contactForm" action="submit" novalidate>     
+                <div class="mb-3 mt-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required 
+                         minlength="3" maxlength="50" pattern="[A-Za-z\s]+" 
+                         title="Name should only contain letters and spaces. Minimum 3 characters.">
+                  <div class="invalid-feedback">Please enter a valid name (letters only, min 3 characters).</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required
+                         title="Please enter a valid email address.">
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" required
+                         pattern="^\+?[0-9]{10,15}$" title="Phone number should be between 10 to 15 digits, with an optional '+' at the start.">
+                  <div class="invalid-feedback">Please enter a valid phone number (10 to 15 digits).</div>
+                </div>
+              
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="3" required
+                            minlength="10" maxlength="300" title="Message must be between 10 and 300 characters."></textarea>
+                  <div class="invalid-feedback">Please enter a message between 10 and 300 characters.</div>
+                </div>
+              
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
+              </form>
+          
+          
           </div>
         </div>
       </div>
@@ -436,8 +473,8 @@
 
   <!-- Last section -->
 
-  <section class="about_section layout_padding">
-    <div class="container">
+  <section class="about_section layout_padding fade">
+    <div class="container fade">
       <div class="service" class="service" style="background-color: #1D4994;">
         <div class="service-content">
           <h2>Deck Cleaning and Sealing for Long-Lasting Beauty</h2>
@@ -545,16 +582,10 @@
               Follow Us
             </h5>
             <div class="social_box">
-              <a href="">
+              <a href="https://www.facebook.com/falconpressurewashing/">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-              </a>
-              <a href="">
+              <a href="https://www.instagram.com/falconpressurewashing/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>
@@ -572,6 +603,20 @@
     </p>
   </footer>
   <!-- footer section -->
+
+  <script>
+    (function() {
+      'use strict';
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
