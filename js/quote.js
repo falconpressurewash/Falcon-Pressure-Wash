@@ -182,7 +182,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
                     return services;
         }
 
-        console.log(firstName.value, lastName.value, email, phone, address.value, city.value, state.value, zipCode, source, fetchServices(), promoCode.value, comments.value);
+        // console.log(firstName.value, lastName.value, email, phone, address.value, city.value, state.value, zipCode, source, fetchServices(), promoCode.value, comments.value);
         emailjs.send("service_equq3ns", "template_l7n63xe", {
             firstName:firstName.value, 
             lastName:lastName.value, 
@@ -203,7 +203,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
             location.reload();
           }, function(error) {
             // console.log('FAILED...', error);
-            alert('Something went wrong. Please try again. Error: ' + error.text);
+            alert('Something went wrong. Please try again later');
             location.reload();
           });
     }
