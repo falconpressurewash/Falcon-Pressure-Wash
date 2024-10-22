@@ -28,7 +28,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     message: message,
     "g-recaptcha-response": recaptchaResponse // Pass the reCAPTCHA response to EmailJS (if needed)
   }).then(function(response) {
-    // console.log('SUCCESS!', response.status, response.text);
     alert('Thanks for the submission. We will reply to you shortly.');
     location.reload();
   }, function(error) {
