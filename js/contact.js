@@ -51,6 +51,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   }).then(function(response) {
     console.log('SUCCESS!', response.status, response.text);
     alert('Thanks for the submission. We will reply to you shortly.');
+    location.reload();
   }, function(error) {
     console.log('FAILED...', error);
     alert('Something went wrong. Please try again. Error: ' + error.text);
