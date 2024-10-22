@@ -173,9 +173,8 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
     } 
 
     else {
-
-        let services = [];
         let fetchServices = () =>{
+        let services = [];
             for(let items in selectedServices)
                 {
                     services.push(selectedServices[items].name);
