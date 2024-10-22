@@ -173,29 +173,39 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
     } 
 
     else {
-        console.log(firstName.value, lastName.value, email, phone, address.value, city.value, state.value, zipCode, source, selectedServices.name, promoCode.value, comments.value);
-        // emailjs.send("service_equq3ns", "template_l7n63xe", {
-        //     firstName:firstName.value, 
-        //     lastName:lastName.value, 
-        //     email:email, 
-        //     phone:phone, 
-        //     address:address.value, 
-        //     city:city.value, 
-        //     state:state.value, 
-        //     zipCode:zipCode, 
-        //     source:source, 
-        //     selected:selectedServices.name, 
-        //     promo:promoCode.value, 
-        //     comments:comments.value
-        //   }).then(function(response) {
-        //     console.log('SUCCESS!', response.status, response.text);
-        //     alert('Thanks for the submission. We will reply to you shortly.');
-        //     location.reload();
-        //   }, function(error) {
-        //     // console.log('FAILED...', error);
-        //     alert('Something went wrong. Please try again. Error: ' + error.text);
-        //     location.reload();
-        //   });
+
+        let services = [];
+        let fetchServices = () =>{
+            for(let items in selectedServices)
+                {
+                    services.push(selectedServices[items].name);
+                }
+                    return services;
+        }
+
+        console.log(firstName.value, lastName.value, email, phone, address.value, city.value, state.value, zipCode, source, fetchServices(), promoCode.value, comments.value);
+        emailjs.send("service_equq3ns", "template_l7n63xe", {
+            firstName:firstName.value, 
+            lastName:lastName.value, 
+            email:email, 
+            phone:phone, 
+            address:address.value, 
+            city:city.value, 
+            state:state.value, 
+            zipCode:zipCode, 
+            source:source, 
+            selected:fetchServices(), 
+            promo:promoCode.value, 
+            comments:comments.value
+          }).then(function(response) {
+            // console.log('SUCCESS!', response.status, response.text);
+            alert('Thanks for the submission. We will reply to you shortly.');
+            location.reload();
+          }, function(error) {
+            // console.log('FAILED...', error);
+            alert('Something went wrong. Please try again. Error: ' + error.text);
+            location.reload();
+          });
     }
 });
 
