@@ -18,7 +18,18 @@
         rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
-    <script defer src="/js/quote.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+          publicKey: "290Evkf_sPxo5kSxs",
+        });
+      })();
+      </script>
+      <script defer src="/js/quote.js"></script>
 
     <style>
         body {
@@ -429,6 +440,8 @@
                     reply END or STOP to any email or text message to immediately opt out. Standard text rates apply.
                 </label>
             </div>
+
+            <div class="g-recaptcha" data-sitekey="6LfOe2gqAAAAAAGQWKS-zzqEYnXSujyb-aQQGP1k"></div><br>
 
             <div class="text-center mt-4">
                 <button type="submit" class="btn-1">Get A Quote</button>

@@ -138,7 +138,6 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
         }
     }
     
-
     isValid &= validateField(document.getElementById('address'), 'addressError');
     isValid &= validateField(document.getElementById('city'), 'cityError');
     isValid &= validateField(document.getElementById('state'), 'stateError');
@@ -165,9 +164,38 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
     // Prevent form submission if not valid
     if (!isValid) {
         event.preventDefault(); // Prevent form submission
-    } else {
+    } 
+
+    var recaptchaResponse = grecaptcha.getResponse();
+    if (recaptchaResponse.length === 0) {
+        alert('Please complete the reCAPTCHA.');
+        return;
+    }
+    else {
         console.log(firstName.value, lastName.value, email, phone, address.value, city.value, state.value, zipCode, source, selectedServices, promoCode.value, comments.value);
-        quoteForm.reset();
+        emailjs.send("service_equq3ns", "template_zrlwa2n", {
+            firstName:firstName.value, 
+            lastName:lastName.value, 
+            email:email, 
+            phone:phone, 
+            address:address.value, 
+            city:city.value, 
+            state:state.value, 
+            zipCode:zipCode, 
+            source:source, 
+            selected:selectedServices, 
+            promo:promoCode.value, 
+            comments:comments.value,
+            "g-recaptcha-response": recaptchaResponse // Pass the reCAPTCHA response to EmailJS (if needed)
+          }).then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Thanks for the submission. We will reply to you shortly.');
+            location.reload();
+          }, function(error) {
+            // console.log('FAILED...', error);
+            alert('Something went wrong. Please try again. Error: ' + error.text);
+            location.reload();
+          });
     }
 });
 
