@@ -196,7 +196,8 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
             source:source, 
             selected:fetchServices(), 
             promo:promoCode.value, 
-            comments:comments.value
+            comments:comments.value,
+            "g-recaptcha-response": recaptchaResponse
           }).then(function(response) {
             // console.log('SUCCESS!', response.status, response.text);
             alert('Thanks for the submission. We will reply to you shortly.');
