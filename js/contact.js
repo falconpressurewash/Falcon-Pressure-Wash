@@ -18,7 +18,7 @@
 //   });
 
 
-console.log("Contact form script added");
+console.log("Contact form script added!");
 document.getElementById('contactForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent default form submission behavior
 
