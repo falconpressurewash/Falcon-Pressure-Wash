@@ -11,7 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 4rem 0;
-  height: 40vh; /* Adjust this to fit your layout */
+  height: 45vh; /* Adjust this to fit your layout */
   display: flex;
   align-items: center;
 }
@@ -92,6 +92,15 @@
   font-weight: bold;
   text-transform: uppercase;
   padding-bottom: 10px;
+}
+
+@media only screen and (max-width:500px){
+  .serviePage-Heading {
+    margin-top: 25px;
+    }
+    .blueSection-heading {
+      font-size: 1.4rem !important;
+      }
 }
 
 .blueSection-heading{
@@ -367,7 +376,7 @@ a:focus {
 
 .about_section .detail-box {
   background-color: #f8eeee;
-  padding: 65px 25px;
+  padding: 45px 25px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   position: relative;
