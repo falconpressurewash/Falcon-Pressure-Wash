@@ -134,6 +134,10 @@ background-color: #F3F3F3 !important;
                 display: block;
         }
 
+        .navbar-nav .nav-link {
+          color: black;
+      }
+
         .header-container{
                 display: none;
         }

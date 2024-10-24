@@ -11,7 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 4rem 0;
-  height: 45vh; /* Adjust this to fit your layout */
+  min-height: 45vh; /* Adjust this to fit your layout */
   display: flex;
   align-items: center;
 }
@@ -98,6 +98,7 @@
   .serviePage-Heading {
     margin-top: 25px;
     }
+
     .blueSection-heading {
       font-size: 1.4rem !important;
       }
