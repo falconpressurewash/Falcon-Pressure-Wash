@@ -1,3 +1,53 @@
+/* .blue-section {
+  background-color: #002B7A;
+  color: white;
+  padding: 4rem 0;
+} */
+
+.blue-section {
+  position: relative; /* Ensures the overlay is positioned correctly */
+  background-image: url('../images/blue-section.webp'); /* Replace with your background image */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 4rem 0;
+  height: 40vh; /* Adjust this to fit your layout */
+  display: flex;
+  align-items: center;
+}
+
+.blue-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 43, 122, 0.9); /* Blue overlay with 70% opacity */
+  z-index: 1; /* Ensures the overlay is behind the content */
+}
+
+.blue-section .container {
+  position: relative;
+  z-index: 2; /* Ensures the content appears above the overlay */
+  color: white;
+}
+
+.btn-box a {
+  background-color: white;
+  color: #002B7A;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-box a:hover {
+  background-color: #002B7A;
+  color: white;
+  transition: 0.3s ease;
+}
+
 
 .layout_padding {
   padding-top: 90px;
@@ -35,13 +85,22 @@
   flex-direction: column;
 }
 
-.heading_container h2 {
+.heading_container h2, .serviePage-Heading {
   color: #1D4994;
   font-family: 'Microgramma';
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
   padding-bottom: 10px;
+}
+
+.blueSection-heading{
+  color: white;
+  font-family: 'Microgramma';
+  /* position: relative; */
+  /* font-weight: bold; */
+  /* text-transform: capitalize !important; */
+  /* padding-bottom: 10px; */
 }
 
 .heading_container.heading_center {
@@ -172,6 +231,7 @@ a:focus {
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
+  text-shadow: black 0px 0px 3px;
 }
 
 
@@ -208,6 +268,7 @@ a:focus {
 .slider_section .detail-box p {
   margin-top: 25px;
   font-size: 18px;
+  text-shadow: black 0px 0px 3px;
 }
 
 .slider_section .detail-box .btn-box {
@@ -236,7 +297,7 @@ a:focus {
 
 .slider_section .detail-box .btn-box .btn-1:hover {
   background-color: #CE1126;
-  border-color: #CE1126;
+  border: 1px solid #CE1126 !important;
   color: white;
 }
 
@@ -248,12 +309,12 @@ a:focus {
   color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
 }
 
 .slider_section .detail-box .btn-box .btn-2:hover {
   background-color: #CE1126;
-  border-color: #CE1126;
+  /* border-color: #CE1126; */
   color: white;
 }
 
@@ -306,7 +367,7 @@ a:focus {
 
 .about_section .detail-box {
   background-color: #f8eeee;
-  padding: 35px 25px;
+  padding: 65px 25px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   position: relative;
@@ -332,7 +393,7 @@ a:focus {
 }
 
 .about_section .detail-box a,
-.btn-submit {
+.btn-submit, .serviceButton a {
   font-weight: bold;
   display: inline-block;
   padding: 10px 35px;
@@ -340,7 +401,7 @@ a:focus {
   color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   text-transform: uppercase;
 }
 
@@ -357,9 +418,9 @@ a:focus {
 }
 
 .about_section .detail-box a:hover,
-.btn-submit:hover {
+.btn-submit:hover, .serviceButton a:hover{
   background-color: #CE1126;
-  border-color: #CE1126;
+  /* border-color: #CE1126; */
   color: white;
 }
 
@@ -457,6 +518,46 @@ a:focus {
   margin-top: 25px;
 }
 
+  #first-slide {
+    position: relative; /* Ensures the overlay is positioned correctly */
+    background-image: url('../images/Main.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 75vh; /* Adjust height as per your requirement */
+    display: flex;
+    align-items: center;
+  }
+
+  #first-slide-service {
+    position: relative; /* Ensures the overlay is positioned correctly */
+    background-image: url('../images/Main.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh; /* Adjust height as per your requirement */
+    display: flex;
+    align-items: center;
+  }
+
+
+#first-slide::before, #first-slide-service::before  {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity of the overlay */
+  z-index: 1; /* Ensures the overlay is behind the content */
+}
+
+#first-slide .container, #first-slide-service .container {
+  position: relative;
+  z-index: 2; /* Ensures the content is above the overlay */
+}
+
+
 .service_section .box .img-box svg {
   width: 75px;
   height: auto;
@@ -482,7 +583,7 @@ a:focus {
 .service_section .box .detail-box h6 {
   font-family: 'Microgramma';
   line-height: 1.5em;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -628,10 +729,10 @@ a:focus {
 }
 
 .contact-section {
-  background-image: url('../images/contact.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  /* background-image: url('../images/contact.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-attachment: fixed; */
   padding: 80px 0;
   position: relative;
 }
@@ -643,7 +744,8 @@ a:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #fdf9f9;
+  /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 .form-container {
