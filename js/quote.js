@@ -56,14 +56,14 @@ document.getElementById('city').addEventListener('blur', function() {
     validateField(this, 'cityError');
 });
 
-document.getElementById('state').addEventListener('blur', function() {
-    const isValid = this.value !== '';
-    if (!isValid) {
-        document.getElementById('stateError').style.display = 'block';
-    } else {
-        document.getElementById('stateError').style.display = 'none';
-    }
-});
+// document.getElementById('state').addEventListener('blur', function() {
+//     const isValid = this.value !== '';
+//     if (!isValid) {
+//         document.getElementById('stateError').style.display = 'block';
+//     } else {
+//         document.getElementById('stateError').style.display = 'none';
+//     }
+// });
 
 document.getElementById('zipCode').addEventListener('blur', function() {
     const zipPattern = /^\d{5}$/; // Adjust for your zip code format
@@ -140,7 +140,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
     
     isValid &= validateField(document.getElementById('address'), 'addressError');
     isValid &= validateField(document.getElementById('city'), 'cityError');
-    isValid &= validateField(document.getElementById('state'), 'stateError');
+    // isValid &= validateField(document.getElementById('state'), 'stateError');
 
     const zipCode = document.getElementById('zipCode').value.trim();
     const zipPattern = /^\d{5}$/; // Adjust for your zip code format
@@ -190,7 +190,7 @@ document.getElementById('quoteForm').addEventListener('submit', function(event) 
             phone:phone, 
             address:address.value, 
             city:city.value, 
-            state:state.value, 
+            // state:state.value, 
             zipCode:zipCode, 
             source:source, 
             selected:fetchServices(), 

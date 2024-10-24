@@ -247,7 +247,7 @@ a:focus {
 @media (max-width: 576px) {
   .slider_section .detail-box h1, h2 {
       font-size: 1.7rem !important;
-      line-height: 1.2em !important;
+      line-height: 1.3em !important;
   }
 
   .service-content {
