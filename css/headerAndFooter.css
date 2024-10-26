@@ -115,7 +115,7 @@ button:focus{
 }
 
 .navbar-border {
-    /* border-radius: 8px; */
+    border-radius: 8px;
     margin: 10px 0px 0px 0px;
 }
 .main-header {
