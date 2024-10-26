@@ -17,6 +17,10 @@ body {
   color: #0c0c0c;
 }
 
+.emailUs{
+margin-top: 5px;
+}
+
 /* Define the fade animation */
 @keyframes fadeIn {
   0% {
@@ -76,7 +80,13 @@ button:focus{
     font-weight: 600;
 }
 
+.licenseLogo
+{
+  margin-top: 10px;
+}
+
 .contact-info {
+  margin-top: 20px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -102,7 +112,7 @@ button:focus{
 }
 
 .navbar-border {
-    border-radius: 8px;
+    /* border-radius: 8px; */
     margin: 10px 0px 0px 0px;
 }
 .main-header {
